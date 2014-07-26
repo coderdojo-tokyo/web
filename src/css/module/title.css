@@ -1,0 +1,68 @@
+/*!
+ * タイトル
+ */
+
+.title {
+  margin: 0;
+  padding: 2em;
+  color: #fff;
+}
+.title > i.cd:before {
+  font-size: 500%;
+  display: block;
+}
+.title > h1 {
+  font-size: 1.5em;
+  margin: .5em 0 1em;
+}
+.title > p {
+  padding: 0 1em;
+  margin: 0 auto;
+  max-width: 680px;
+  font-size: 130%;
+}
+.title-hr {
+  border: none;
+  border-top: 3px solid #423933;
+  margin-top: 4em;
+}
+.title-hr > i.ai:before {
+	font-size: 600%;
+	margin: -.5em 0;
+}
+
+@media only screen and (min-width: 560px) {
+  .title > i.ai:before {
+    font-size: 1000%;
+  }
+  .title > h1 {
+    font-size: 1.7em;
+  }
+  .title > p {
+    padding: 0 3em;
+    font-size: 110%;
+  }
+  .title > ul li {
+    border-radius: 3px;
+    line-height: 2.8em;
+  }
+  .title-hr > i.ai:before {
+    font-size: 750%;
+  }
+}
+
+@media only screen and (min-width: 720px) {
+  .title > i.ai:before {
+    font-size: 1200%;
+  }
+  .title > h1 {
+    font-size: 1.9em;
+  }
+  .title > p {
+    padding: 0 5em;
+    font-size: 100%;
+  }
+  .title-hr > i.ai:before {
+    font-size: 900%;
+  }
+}

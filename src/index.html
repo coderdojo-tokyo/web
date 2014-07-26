@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title>CoderDojo Tokyo</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="CoderDojoは小中学生のためのプログラミング道場">
+    <meta property="og:title" content="CoderDojo Tokyo">
+    <meta property="og:site_name" content="CoderDojo Tokyo">
+    <meta property="og:url" content="http://tokyo.coderdojo.jp/">
+    <meta property="og:image" content="http://tokyo.coderdojo.jp/og-image.png">
+    <meta property="og:image:type" content="image/png">
+
+    <link href="css/style.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <header class="title">
+      <i class="cd cd-logo"></i>
+      <h1>CoderDojo Tokyo</h1>
+      <p>CoderDojoは小中学生のためのプログラミング道場</p>
+    </header>
+    <section>
+      <p>CoderDojo Tokyoでは、毎週日曜日、ボランティアによるプログラミング道場を開催しています。</p>
+      <ul>
+        <li>Scratch (ブロックを組合わせて簡単プログラミング)</li>
+        <li>HTML / CSS / JavaScript</li>
+        <li>YouTubeなどを活用したWEBサイト作成</li>
+        <li>電子工作と組合わせたプログラミング</li>
+      </ul>
+    </section>
+    <section class="meetup" ng-controller="MeetupController as meetup">
+      <h2>Upcoming Meetups</h2>
+      <ul>
+        <li class="meetup-item" ng-repeat="event in upcomings">
+          <header>
+            <img ng-src="http://graph.facebook.com/{{ event.source }}/picture?type=large">
+            <time>{{ event.start_time | date : 'M/d' }}</time>
+          </header>
+          <h3>{{ event.name }}</h3>
+          <ul>
+            <li><i class="cd cd-clock"></i>{{ event.start_time | date : 'H:mm' }} - {{ event.end_time | date : 'H:mm' }}</li>
+            <li><a ng-href="http://www.facebook.com/{{ event.venue_id }}"><i class="cd cd-pin"></i>{{ event.location }}</a></li>
+          </ul>
+          <footer>{{ event.start_time | date : 'y' }}</footer>
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h2>Organizer &amp; Mentors</h2>
+      <p>プログラマやデザイナ、エンジニアなど、ソフトやハードを作ることを専門にしている人たちです。こどものコンピュータ教育に携わる方、会場のOSSCafeの常連ボランティアさん他。</p>
+    </section>
+    <section>
+      <h2>About us</h2>
+      <p>現在、WEBサイト制作中です。制作にご協力いただける方は、プルリクエスト下さい!</p>
+      <ul>
+        <li><a href="https://www.facebook.com/coderdojo.tokyo">Facebook Page</a></li>
+        <li><a href="https://github.com/coderdojo-tokyo">GitHub Organization</a></li>
+        <li><a href="http://zen.coderdojo.com/dojo/57">CoderDojo.com</a></li>
+        <li><a href="https://groups.google.com/forum/?fromgroups#!forum/coderdojo-tokyo">Google Groups</a></li>
+      </ul>
+    </section>
+    <footer>
+      <h2>CoderDojo Tokyo 運営グループ</h2>
+    </footer>
+    <script src="../public/js/angular.min.js"></script>
+    <script src="../public/js/parse.js"></script>
+    <script src="../public/js/index.js"></script>
+  </body>
+</html>

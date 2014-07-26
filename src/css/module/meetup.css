@@ -1,0 +1,75 @@
+/*!
+ * イベント
+ */
+
+.meetup {
+  text-align: center;
+}
+.meetup > ul {
+  text-align: center;
+  list-style: none;
+  padding: 0;
+}
+.meetup-item {
+  display: inline-block;
+  width: 220px;
+  height: 300px;
+  overflow: hidden;
+  margin: 10px;
+  background: #fff;
+  vertical-align: top;
+  position: relative;
+  text-align: left;
+}
+.meetup-item > header {
+  height: 150px;
+  position: relative;
+  overflow: hidden;
+}
+.meetup-item > header > img {
+  width: 220px;
+  position: absolute;
+  left: 50%;
+  margin-left: -50%;
+}
+.meetup-item > header > time {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+  line-height:1em;
+  color: #fff;
+  font-size: 200%;
+  text-align: center;
+  background: rgba(0,0,0,.4);
+}
+.meetup-item h3 {
+  line-height: 1.3em;
+  margin: 10px 5px 0;
+  padding: 0 0 5px;
+  border-bottom: 1px dashed #ccc;
+  font-size: 90%;
+}
+.meetup-item p {
+  margin: 0;
+  padding: 10px 5px;
+  font-size: 90%;
+}
+.meetup-item ul {
+  margin: 0;
+  padding: 10px 5px;
+  font-size: 90%;
+  list-style: none;
+}
+.meetup-item > footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  ;
+  padding: 5px;
+  font-size: 90%;
+  color: #ccc;
+  text-align: center;
+}

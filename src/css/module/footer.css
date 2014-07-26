@@ -1,0 +1,27 @@
+/*!
+ * フッター
+ */
+
+body > footer {
+  margin: -.25em 0 0;
+  padding: 1.5em 0 4em;
+  color: #fff;
+}
+body > footer h2 {
+  font-size: 87.5%;
+  margin-top: 0;
+  margin-bottom: 2em;
+}
+body > footer a {
+  color: inherit;
+}
+body > footer a:hover {
+  color: #fff;
+}
+
+@media only screen and (min-width: 560px) {
+  body > footer > ul li {
+    border-radius: 3px;
+    line-height: 2.8em;
+  }
+}

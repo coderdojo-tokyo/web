@@ -1,0 +1,10 @@
+body {
+  color: #f;
+  background: #2275CA;
+  font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+}
+
+.title > h1,
+.meetup-item > header > time {
+  font-family: 'Fjalla One', sans-serif;
+}

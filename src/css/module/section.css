@@ -1,0 +1,23 @@
+/*!
+ * グルーパルナビゲーション
+ */
+ 
+body > section {
+  padding: 1.5em;
+  background: #fff;
+}
+body > section:nth-child(odd) {
+  background: #f7f7f7;
+}
+body > section > h1 {
+  display: none;
+}
+body > section > h2 {
+  margin-top: 0;
+  font-size: 120%;
+  color: #999;
+}
+body > section > ul {
+  text-align: left;
+  padding-left: 4em;
+}

@@ -1,0 +1,22 @@
+/*!
+ * グルーパルナビゲーション
+ */
+ 
+ .globalnav {
+   
+ }
+ .globalnav > ul {
+   padding: 0;
+ }
+ .globalnav > ul li {
+   display: inline-block;
+   margin: .1em;
+   padding: .2em .5em;
+   background: white;
+ }
+ .globalnav li a {
+   display: block;
+   width: 100%;
+   height: 100%;
+   text-decoration: none;
+ }
