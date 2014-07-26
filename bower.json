@@ -1,0 +1,16 @@
+{
+  "name": "coderdojo-tokyo",
+  "version": "2.0.0",
+  "authors": [
+    "Tsutomu Kawamura <tsutomu@librize.com>"
+  ],
+  "main": "",
+  "license": "",
+  "homepage": "http://tokyo.coderdojo.jp",
+  "private": true,
+  "ignore": [],
+  "dependencies": {
+    "angular": "*",
+    "parse": "http://www.parsecdn.com/js/parse-latest.js"
+  }
+}

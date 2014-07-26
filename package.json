@@ -1,0 +1,73 @@
+{
+  "name": "coderdojo-tokyo",
+  "version": "2.0.0",
+  "homepage": "http://tokyo.coderdojo.jp",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:coderdojo-tokyo/coderdojo-tokyo.github.io.git"
+  },
+  "description": "CoderDojo Tokyo",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "bower install && gulp install"
+  },
+  "keywords": [
+    "micro-library",
+    "library",
+    "charter",
+    "book"
+  ],
+  "author": "Tsutomu Kawamura <tsutomu@librize.com>",
+  "license": "MIT",
+  "browserify": {
+    "transform": [
+      "coffeeify",
+      "debowerify"
+    ]
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "coffee-script": "*",
+    "lodash": "*",
+    "vinyl-source-stream": "*",
+    "streamqueue": "*",
+    "merge-stream": "*",
+    "event-stream": "*",
+    "browser-sync": "*",
+    "marked": "*",
+    "run-sequence": "*",
+    "require-dir": "*",
+    "del": "*",
+
+    "bower": "*",
+    "browserify": "*",
+    "watchify": "*",
+    "coffeeify": "*",
+    "debowerify": "*",
+    "browsernizr": "*",
+
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-base64": "*",
+    "gulp-changed": "*",
+    "gulp-coffee": "*",
+    "gulp-coffeelint": "*",
+    "gulp-concat": "*",
+    "gulp-consolidate": "*",
+    "gulp-cssimport": "*",
+    "gulp-csslint": "*",
+    "gulp-header": "*",
+    "gulp-iconfont": "*",
+    "gulp-less": "*",
+    "gulp-minify-css": "*",
+    "gulp-notify": "*",
+    "gulp-rename": "*",
+    "gulp-replace": "*",
+    "gulp-sketch": "*",
+    "gulp-streamify": "*",
+    "gulp-uglify": "*",
+    "gulp-util": "*"
+  },
+  "private": true
+}
