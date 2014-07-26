@@ -26,13 +26,13 @@
   position: relative;
   overflow: hidden;
 }
-.meetup-item > header > img {
+.meetup-item > header img {
   width: 220px;
   position: absolute;
   left: 50%;
   margin-left: -50%;
 }
-.meetup-item > header > time {
+.meetup-item > header time {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -50,6 +50,9 @@
   padding: 0 0 5px;
   border-bottom: 1px dashed #ccc;
   font-size: 90%;
+}
+.meetup-item a {
+  text-decoration: none;
 }
 .meetup-item p {
   margin: 0;

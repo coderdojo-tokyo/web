@@ -35,10 +35,12 @@
       <ul>
         <li class="meetup-item" ng-repeat="event in upcomings">
           <header>
-            <img ng-src="http://graph.facebook.com/{{ event.source }}/picture?type=large">
-            <time>{{ event.start_time | date : 'M/d' }}</time>
+            <a ng-href="http://www.facebook.com/events/{{ event.source }}/">
+              <img ng-src="http://graph.facebook.com/{{ event.source }}/picture?type=large">
+              <time>{{ event.start_time | date : 'M/d' }}</time>
+            </a>
           </header>
-          <h3>{{ event.name }}</h3>
+          <h3><a ng-href="http://www.facebook.com/events/{{ event.source }}/">{{ event.name }}</a></h3>
           <ul>
             <li><i class="cd cd-clock"></i>{{ event.start_time | date : 'H:mm' }} - {{ event.end_time | date : 'H:mm' }}</li>
             <li><a ng-href="http://www.facebook.com/{{ event.venue_id }}"><i class="cd cd-pin"></i>{{ event.location }}</a></li>
