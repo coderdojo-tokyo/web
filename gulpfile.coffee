@@ -6,7 +6,7 @@ dir         = requireDir './task'
 browserSync = require 'browser-sync'
 reload      = browserSync.reload
 
-gulp.task 'install', -> runSequence 'clean', 'bower', 'icon', ['parse', 'html', 'coffee', 'css']
+gulp.task 'install', -> runSequence 'clean', 'bower', 'icon', ['parse', 'html', 'coffee', 'css', 'image']
 
 gulp.task 'deploy', (cb) ->
   exec 'parse deploy', (error, stdout) ->
