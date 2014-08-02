@@ -1,0 +1,28 @@
+/*!
+ * グルーパルナビゲーション
+ */
+ 
+body > section.cover {
+  padding: 0;
+  max-height: 300px;
+  overflow: hidden;
+  background: #999;
+  line-height: 0;
+}
+.cover > img {
+  width: 100%;
+  max-width: 1200px;
+}
+
+
+@media only screen and (min-width: 560px) {
+  .cover > img {
+    margin-top: -100px;
+  }
+}
+
+@media only screen and (min-width: 720px) {
+  .cover > img {
+    margin-top: -250px;
+  }
+}

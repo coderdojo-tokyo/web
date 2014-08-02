@@ -1,23 +1,42 @@
 /*!
- * グルーパルナビゲーション
+ * セクション
  */
  
 body > section {
   padding: 1.5em;
   background: #fff;
 }
-body > section:nth-child(odd) {
+body > section > * {
+  margin: 0 auto;
+  max-width: 750px;
+}
+body > section:nth-child(even) {
   background: #f7f7f7;
 }
 body > section > h1 {
   display: none;
 }
 body > section > h2 {
-  margin-top: 0;
   font-size: 120%;
   color: #999;
+  margin-bottom: .4em;
 }
 body > section > ul {
   text-align: left;
-  padding-left: 4em;
+  padding-left: 2em;
+  color: #666;
+}
+body > section > p {
+  margin-bottom: .8em;
+  text-align: left;
+}
+
+
+@media only screen and (min-width: 560px) {
+  body > section > ul {
+    padding-left: 7em;
+  }
+  body > section > p {
+    text-align: center;
+  }
 }

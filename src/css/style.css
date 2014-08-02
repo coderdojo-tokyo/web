@@ -10,8 +10,11 @@
 @import url('module/footer.css');
 @import url('module/title.css');
 @import url('module/section.css');
+@import url('module/cover.css');
 @import url('module/meetup.css');
-@import url('module/globalnav.css');
+@import url('module/mentor.css');
+@import url('module/spinner.css');
+@import url('module/tags.css');
 
 /* SMACCS:theme */
 @import url('theme.css');

@@ -1,0 +1,54 @@
+/*!
+ * メンター
+ */
+ 
+.mentor {
+}
+.mentor > ul {
+  text-align: center;
+  list-style: none;
+  padding: 0 0 1.5em;
+  max-width: 100%;
+}
+.mentor-person {
+  display: inline-block;
+  width: 85%;
+  overflow: hidden;
+  margin: 10px;
+  padding: 15px 0;
+  background: #fff;
+  vertical-align: top;
+  position: relative;
+  text-align: center;
+}
+.mentor-person > header > a {
+  text-decoration: none;
+}
+.mentor-person > p {
+  font-size: 90%;
+  padding: 5px 10px;
+  text-align: justify;
+  margin: 5px 0;
+}
+.mentor-person-picture {
+  display: block;
+  height: 96px;
+  width: 96px;
+  background-position: center center;
+  background-size: cover;
+  border-radius: 48px;
+  margin: 0 auto;
+}
+.mentor-person-name {
+  display: block;
+  margin: .5em 0;
+}
+
+@media only screen and (min-width: 560px) {
+  .mentor-person {
+    width: 220px;
+    height: 275px;
+  }
+  .mentor-person > header img {
+  }
+}

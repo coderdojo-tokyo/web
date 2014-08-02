@@ -8,12 +8,12 @@
 .meetup > ul {
   text-align: center;
   list-style: none;
-  padding: 0;
+  padding: 0 0 1.5em;
+  max-width: 100%;
 }
 .meetup-item {
   display: inline-block;
-  width: 220px;
-  height: 300px;
+  width: 85%;
   overflow: hidden;
   margin: 10px;
   background: #fff;
@@ -25,14 +25,15 @@
   height: 150px;
   position: relative;
   overflow: hidden;
+  background: #c4cce2;
 }
-.meetup-item > header img {
-  width: 220px;
+.meetup-item > header > a > img {
+  width: 100%;
   position: absolute;
   left: 50%;
   margin-left: -50%;
 }
-.meetup-item > header time {
+.meetup-item > header > a > time {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -59,20 +60,47 @@
   padding: 10px 5px;
   font-size: 90%;
 }
-.meetup-item ul {
+.meetup-item-props {
   margin: 0;
   padding: 10px 5px;
   font-size: 90%;
   list-style: none;
+}
+.meetup-item-mentors {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 200px;
+  text-align: right;
+}
+.meetup-item-mentors > li {
+  display: inline-block;
+  margin: 2px;
+}
+.meetup-item-mentors > li img {
+  width: 32px;
+  border: 2px solid #fff;
+  border-radius: 18px;
 }
 .meetup-item > footer {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  ;
   padding: 5px;
   font-size: 90%;
   color: #ccc;
   text-align: center;
+}
+
+@media only screen and (min-width: 560px) {
+  .meetup-item {
+    width: 220px;
+    height: 305px;
+  }
+  .meetup-item > header img {
+  }
 }

@@ -1,0 +1,15 @@
+
+.tags {
+  margin: 0 5px;
+  padding: 0;
+  list-style: none;
+}
+.tags > li {
+  display: inline-block;
+  font-size: 80%;
+  color: #fff;
+  background: #2275CA;
+  border-radius: .3em;
+  padding: .2em;
+  margin: .1em;
+}
