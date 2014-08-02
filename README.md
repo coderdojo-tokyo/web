@@ -26,6 +26,27 @@ Facebookページが運用されていて、開催情報をFacebookイベント�
 	0. `src/css/` 以下を書き換えます。
 	0. `$ gulp css && parse deploy`
 
+### ファイル構成
+
+ビルドファイルはリポジトリに含まれません。`cloud`,`public`などは、フォークした後、手元で`$ npm install`すると自動生成されます。(詳しくは後述)
+
+- **`cloud/`**: Cloud Code ※自動生成
+- **`public/`**: Parse.comでホスティングする静的ファイル ※自動生成
+- **`bower_components/`**: ※自動生成
+- **`node_modules/`**: ※自動生成
+- **`config/`**: Parse.comへの接続する設定データを格納 ※秘密情報のためgitに含めず
+- **`doc/`**: ドキュメント関連
+- **`task/`**: gulp.jsのサブタスク
+- **`src/`**: ソース
+	- **`coffee/`**
+		- **`ng`**: AngularJSのコントローラなど
+		- **`parse`** Parse.comのクラス、ジョブほか
+	- `css`
+- `bower.json`
+- `package.json`
+- `gulpfile.coffee`
+- `README.md`: このドキュメント
+
 ## サイトをビルドするには
 
 上記の「日常的な更新」以外の作業をするには、環境構築が必要です。また、最初にサイトを作る場合にも必要になります。
