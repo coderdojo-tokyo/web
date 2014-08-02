@@ -21,6 +21,9 @@
       <h1>CoderDojo Tokyo</h1>
       <p>CoderDojoは小中学生のためのプログラミング道場</p>
     </header>
+    <section class="cover">
+      <img src="https://graph.facebook.com/411951145522588/picture">
+    </section>
     <section>
       <p>CoderDojo Tokyoでは、毎週日曜日、ボランティアによるプログラミング道場を開催しています。</p>
       <ul>
@@ -31,31 +34,55 @@
       </ul>
     </section>
     <section class="meetup" ng-controller="MeetupController as meetup">
-      <h2>Upcoming Meetups</h2>
-      <ul>
+      <h2>近日の道場</h2>
+      <ul ng-if="loaded">
         <li class="meetup-item" ng-repeat="event in upcomings">
           <header>
             <a ng-href="http://www.facebook.com/events/{{ event.source }}/">
-              <img ng-src="http://graph.facebook.com/{{ event.source }}/picture?type=large">
+              <img ng-src="{{ event.cover_source }}">
               <time>{{ event.start_time | date : 'M/d' }}</time>
             </a>
+            <ul class="meetup-item-mentors">
+              <li ng-repeat="mentor_id in event.mentors"><img ng-src="http://graph.facebook.com/{{ mentor_id }}/picture?type=square"></li>
+            </ul>
           </header>
           <h3><a ng-href="http://www.facebook.com/events/{{ event.source }}/">{{ event.name }}</a></h3>
-          <ul>
+          <ul class="meetup-item-props">
             <li><i class="cd cd-clock"></i>{{ event.start_time | date : 'H:mm' }} - {{ event.end_time | date : 'H:mm' }}</li>
             <li><a ng-href="http://www.facebook.com/{{ event.venue_id }}"><i class="cd cd-pin"></i>{{ event.location }}</a></li>
           </ul>
-          <footer>{{ event.start_time | date : 'y' }}</footer>
+          <ul class="tags">
+            <li ng-repeat="tag in event.tags">{{ tag }}</li>
+          </ul>
         </li>
       </ul>
+      <div class="spinner" ng-if="!loaded">イベント情報を読み込み中...</div>
     </section>
     <section>
-      <h2>Organizer &amp; Mentors</h2>
+      <h2>参加方法</h2>
+      <p>希望の参加日のイベントページ(Facebook)で、参加表明します。参加する小中学生の学年、やりたいことをイベントページのタイムラインに書き込んでおいてください。受け入れ人数は最大5〜7人程度です。Facebookを利用していない場合は、電話090-6113-5196(下北沢オープンソースCafe)まで問い合せください。</p>
+    </section>
+    <section class="mentor" ng-controller="MentorController as mctrl">
+      <h2>こんなひとたちがやってます</h2>
       <p>プログラマやデザイナ、エンジニアなど、ソフトやハードを作ることを専門にしている人たちです。こどものコンピュータ教育に携わる方、会場のOSSCafeの常連ボランティアさん他。</p>
+      <ul ng-if="loaded">
+        <li class="mentor-person" ng-repeat="mentor in mentors">
+          <header>
+            <a ng-href="{{ mentor.url }}"> 
+              <span class="mentor-person-picture" ng-style="{'background-image':'url(http://graph.facebook.com/{{ mentor.source }}/picture?type=large)'}"></span>
+              <span class="mentor-person-name">{{ mentor.last_name }}さん</span>
+            </a>
+          </header>
+          <ul class="tags">
+            <li ng-repeat="tag in mentor.tags">{{ tag }}</li>
+          </ul>
+          <p>{{ mentor.description }}</p>
+        </li>
+      </ul>
+      <div class="spinner" ng-if="!loaded">メンター情報を読み込み中...</div>
     </section>
     <section>
-      <h2>About us</h2>
-      <p>現在、WEBサイト制作中です。制作にご協力いただける方は、プルリクエスト下さい!</p>
+      <p>現在、WEBサイト制作中です。制作にご協力いただける方は、<a href="https://github.com/coderdojo-tokyo">こちら</a>までプルリクエスト下さい!</p>
       <ul>
         <li><a href="https://www.facebook.com/coderdojo.tokyo">Facebook Page</a></li>
         <li><a href="https://github.com/coderdojo-tokyo">GitHub Organization</a></li>

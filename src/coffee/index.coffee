@@ -8,3 +8,4 @@ Parse.initialize APPLICATION_ID, JAVASCRIPT_KEY
 
 angular.module 'app', []
 .controller 'MeetupController', require './ng/controller/MeetupController'
+.controller 'MentorController', require './ng/controller/MentorController'
