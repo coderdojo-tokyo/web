@@ -18,4 +18,5 @@ module.exports = Parse.Object.extend 'Meetup',
         @set 'end_time', new Date attrs.end_time
       else
         @set 'end_time', attrs.end_time
+    @set 'cover_source', attrs.cover.source if attrs.cover?.source?
     @

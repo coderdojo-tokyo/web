@@ -1,4 +1,4 @@
-Meetup = require 'cloud/class/Meetup'
+Mentor = require 'cloud/class/Mentor'
 
 module.exports = (request, response) ->
   source = request.object.get 'source'
@@ -7,15 +7,15 @@ module.exports = (request, response) ->
     response.success()
     return
   unless source
-    response.error 'A Meetup must have a source (event_id).'
+    response.error 'A Mentor must have a source (user_id).'
     return
-  new Parse.Query Meetup
+  new Parse.Query Mentor
   .equalTo 'source', source
   .first()
   .then (result) ->
     if result
-      response.error "A Meetup (#{result.get 'source'}) already exists."
+      response.error "A Mentor (#{result.get 'source'}) already exists."
     else
       response.success()
   , (error) ->
-      response.error 'Could not validate uniqueness for this Meetup object.'
+      response.error 'Could not validate uniqueness for this Mentor object.'
