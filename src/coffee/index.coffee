@@ -1,10 +1,6 @@
-#require 'angular'
-#require 'parse'
+config = require '../../config/front'
 
-APPLICATION_ID = 'BLQE6s5hCJf6HZSaeXB6e1EVXwi7fDyPHAdoRwGn'
-JAVASCRIPT_KEY = 'RL2PReLPl4OzzW7sFaAKDW35y1GfxyreRKwZnovd'
-
-Parse.initialize APPLICATION_ID, JAVASCRIPT_KEY
+Parse.initialize config.parse.applicationId, config.parse.javascriptKey
 
 angular.module 'app', []
 .controller 'MeetupController', require './ng/controller/MeetupController'

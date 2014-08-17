@@ -1,6 +1,7 @@
-FB = require 'cloud/lib/facebook'
-Meetup = require 'cloud/class/Meetup'
-Mentor = require 'cloud/class/Mentor'
+FB      = require 'cloud/lib/facebook'
+Setting = require 'cloud/class/Setting'
+Meetup  = require 'cloud/class/Meetup'
+Mentor  = require 'cloud/class/Mentor'
 
 module.exports = (request, status) ->
   Parse.Cloud.useMasterKey()
@@ -42,9 +43,10 @@ module.exports = (request, status) ->
       .set 'tags', tags
       .save()
   
-  loadMentors()
+  Setting.load()
+  .then -> loadMentors()
   .then ->
-    FB.api 'coderdojo.tokyo',
+    FB.api Setting.get 'facebook_page_id',
       locale: 'ja_JP'
       fields: 'events.fields(id,name,location,venue,description,start_time,end_time,attending,cover)'
   .then (data) ->
@@ -55,5 +57,4 @@ module.exports = (request, status) ->
     promises = for id, mentor of mentors
       mentor.save()
     Parse.Promise.when promises
-  .then ->
-    status.success 'Fetched successfully.'
+  .then -> status.success 'Fetched successfully.'
