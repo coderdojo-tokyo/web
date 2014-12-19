@@ -4,7 +4,7 @@
   "homepage": "http://tokyo.coderdojo.jp",
   "repository": {
     "type": "git",
-    "url": "git@github.com:coderdojo-tokyo/coderdojo-tokyo.github.io.git"
+    "url": "git@github.com:coderdojo-tokyo/web.git"
   },
   "description": "CoderDojo Tokyo",
   "scripts": {
@@ -12,10 +12,7 @@
     "postinstall": "bower install && gulp install"
   },
   "keywords": [
-    "micro-library",
-    "library",
-    "charter",
-    "book"
+    "coderdojo"
   ],
   "author": "Tsutomu Kawamura <tsutomu@librize.com>",
   "license": "MIT",
@@ -47,7 +44,7 @@
     "debowerify": "*",
     "browsernizr": "*",
 
-    "gulp": "*",
+    "gulp": "3.8.7",
     "gulp-autoprefixer": "*",
     "gulp-base64": "*",
     "gulp-changed": "*",

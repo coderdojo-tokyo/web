@@ -3,7 +3,7 @@ Meetup = require '../../parse/class/Meetup'
 module.exports = ($scope, $http) ->
   $scope.loaded = false
   $scope.upcomings = []
-  yesterday = new Date().setDate new Date().getDate() - 1
+  (yesterday = new Date()).setDate yesterday.getDate() - 1
   new Parse.Query Meetup
   .greaterThan 'start_time', yesterday
   .ascending 'start_time'

@@ -2,13 +2,16 @@ gulp        = require 'gulp'
 runSequence = require 'run-sequence'
 requireDir  = require 'require-dir'
 dir         = requireDir './task'
+del         = require 'del'
 {exec}      = require 'child_process'
 browserSync = require 'browser-sync'
 reload      = browserSync.reload
 
 gulp.task 'install', -> runSequence 'clean', 'bower', 'icon', ['parse', 'html', 'coffee', 'css', 'image']
 
-gulp.task 'deploy', (cb) ->
+gulp.task 'clean', (cb) -> del ['./public', './cloud'], -> cb()
+
+gulp.task 'deploy', ['parse'], (cb) ->
   exec 'parse deploy', (error, stdout) ->
     console.log stdout
     cb()
@@ -23,7 +26,7 @@ gulp.task 'watch', ->
     './src/coffee/ng/**/*.coffee'
     './src/coffee/parse/class/*.coffee'
   ], o, ['coffee']
-  gulp.watch ['./src/coffee/parse/**/*.coffee'], o, ['parse']
+  gulp.watch ['./src/coffee/parse/**/*.coffee'], o, ['deploy']
   gulp.watch ['./src/css/**/*.css'], o, ['css']
   gulp.watch ['./src/icon/*.sketch/Data'], o, ['icon']
   gulp.watch ['./src/index.html'], o, ['html']
