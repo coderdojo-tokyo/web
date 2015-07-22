@@ -16,9 +16,12 @@ gulp.task 'icon', ->
       export: 'artboards'
       formats: 'svg'
     .pipe iconfont fontName: FONTNAME
-    .on 'codepoints', (codepoints) ->
+    .on 'glyphs', (glyphs) ->
       options =
-        glyphs: codepoints
+        glyphs: glyphs.map (glyph) ->
+          # this line is needed because gulp-iconfont has changed the api from 2.0
+          name: glyph.name
+          codepoint: glyph.unicode[0].charCodeAt 0
         fontName: FONTNAME
         fontPath: './' # set path to font (from your CSS file if relative)
         className: 'cd' # set class name in your CSS
